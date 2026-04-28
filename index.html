@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Trainer Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="casino-table">
+        <header class="top-bar">
+            <div class="logo">Blackjack Trainer Pro</div>
+            <div class="bankroll-container">
+                <span class="label">Bankroll</span>
+                <span class="value" id="bankroll-display">€1,000.00</span>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="dealer-section">
+                <div class="section-title">Dealer must draw to 16 and stand on all 17s</div>
+                <div class="cards-container" id="dealer-cards">
+                    <!-- Dealer cards injected here -->
+                </div>
+                <div class="score-display dealer-score" id="dealer-score">?</div>
+            </div>
+
+            <div class="center-logo">
+                BLACKJACK PAYS 3 TO 2
+            </div>
+
+            <div class="player-section">
+                <div class="cards-container" id="player-cards">
+                    <!-- Player cards injected here -->
+                </div>
+                <div class="score-display player-score" id="player-score">0</div>
+                <div class="bet-container">
+                    <div class="bet-chip">
+                        <span id="current-bet-display">€10</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="probability-panel" id="probability-panel">
+            <h3>Win Probabilities</h3>
+            <div class="prob-grid" id="prob-grid">
+                <div class="prob-row">
+                    <span class="action">Hit</span>
+                    <div class="bar-container"><div class="bar win-bar" style="width: 40%"></div></div>
+                    <span class="percentage">40%</span>
+                </div>
+                <div class="prob-row">
+                    <span class="action">Stand</span>
+                    <div class="bar-container"><div class="bar win-bar" style="width: 35%"></div></div>
+                    <span class="percentage">35%</span>
+                </div>
+                <div class="prob-row">
+                    <span class="action">Double</span>
+                    <div class="bar-container"><div class="bar win-bar" style="width: 42%"></div></div>
+                    <span class="percentage">42%</span>
+                </div>
+            </div>
+            <div class="loading-overlay" id="prob-loading">Calculating...</div>
+        </aside>
+
+        <footer class="controls bg-glass">
+            <div class="betting-controls" id="betting-controls">
+                <button class="btn btn-chip" data-val="5">€5</button>
+                <button class="btn btn-chip" data-val="10">€10</button>
+                <button class="btn btn-chip" data-val="25">€25</button>
+                <button class="btn btn-chip" data-val="100">€100</button>
+                <button class="btn btn-primary" id="btn-deal">Deal</button>
+            </div>
+            <div class="action-controls hidden" id="action-controls">
+                <button class="btn btn-action" id="btn-hit">Hit</button>
+                <button class="btn btn-action" id="btn-stand">Stand</button>
+                <button class="btn btn-action" id="btn-double">Double Down</button>
+                <button class="btn btn-action" id="btn-split">Split</button>
+                <button class="btn btn-action" id="btn-surrender">Surrender</button>
+            </div>
+        </footer>
+
+        <div class="message-overlay hidden" id="message-overlay">
+            <h2 id="message-text">You Win!</h2>
+            <button class="btn btn-primary mt-2" id="btn-next-hand">Next Hand</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="deck.js"></script>
+    <script src="montecarlo.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
