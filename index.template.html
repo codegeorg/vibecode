@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7f3">
+  <meta name="description" content="Lerne R für Zeitreihenanalyse an einem Tag. Ein interaktiver Lernpfad mit echtem R, Übungen und direkt sichtbaren Ergebnissen.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>R Lernstudio · Dein Tag für Zeitreihen</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <aside class="sidebar" id="sidebar" aria-label="Kursnavigation">
+    <a class="brand" href="#lesson/vectors" aria-label="R Lernstudio Startseite"><span class="brand-mark">R<span>↗</span></span><span>lernstudio<span class="brand-sub">DEIN WEG IN DIE DATEN</span></span></a>
+    <div class="sidebar-label">DEIN WORKSPACE</div>
+    <nav class="workspace-nav" aria-label="Bereiche">
+      <a href="#course" data-view="course"><span data-icon="map"></span>Lernpfad<span class="nav-count">18</span></a>
+      <a href="#practice" data-view="practice"><span data-icon="terminal"></span>Freies Üben<span class="small-arrow">↗</span></a>
+      <a href="#cheatsheet" data-view="cheatsheet"><span data-icon="book"></span>Spickzettel</a>
+    </nav>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-label chapter-label">DEIN LERNPFAD <span id="sidebar-count">0 / 18</span></div>
+    <nav id="lesson-nav" class="lesson-nav" aria-label="Lektionen"></nav>
+    <div class="sidebar-bottom">
+      <div class="local-save"><span class="local-dot"></span>Dein Fortschritt bleibt gespeichert</div>
+      <button class="help-button" id="help-button"><span data-icon="help"></span>Ein kleiner Wegweiser<span>?</span></button>
+    </div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="icon-button mobile-menu" id="mobile-menu" aria-label="Navigation öffnen" aria-expanded="false"><span data-icon="menu"></span></button>
+      <div class="breadcrumb"><span>Zeitreihenanalyse mit R</span><span class="crumb-sep">/</span><span id="breadcrumb-current">Grundlagen</span></div>
+      <div class="top-actions"><span class="today-badge"><span data-icon="sun"></span>Ein Tag. Ein neues Skillset.</span><button class="search-trigger" id="search-trigger" aria-label="Kurs durchsuchen"><span data-icon="search"></span><kbd>⌘ K</kbd></button><span class="avatar" title="Dein persönlicher Lernbereich">DU</span></div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="app-footer"><span><span class="footer-dot"></span>Weniger auswendig. Mehr verstehen.</span><span>Mit deinen Musterlösungen als rotem Faden <span class="footer-spark">✦</span></span></footer>
+  </div>
+  <dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript>Bitte aktiviere JavaScript, um den R-Lernkurs und die Code-Ausführung zu verwenden.</noscript>
+</body>
+</html>
